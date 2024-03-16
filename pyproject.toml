@@ -26,3 +26,29 @@ exclude = '''
   )/
 )
 '''
+
+[tool.poetry]
+name = "pointnet2"
+version = "3.0.0"
+description = ""
+authors = ["Erik Wijmans"]
+license = "unlicense"
+readme = "README.rst"
+packages = [
+    { include = "pointnet2" },
+    { include = "pointnet2_ops", from = "pointnet2_ops_lib" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.9"
+h5py = "^3.10.0"
+lmdb = "^1.4.1"
+msgpack-numpy = "^0.4.8"
+pytorch-lightning = "^2.2.1"
+torch = "<2.0.1"
+torchvision = "<0.17"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
